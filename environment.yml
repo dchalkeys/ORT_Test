@@ -1,0 +1,14 @@
+name: ORT_Test
+channels: 
+-conda forge
+dependencies:
+  - python=3.10
+  - netCDF4
+  - geopandas
+  - xarray
+  - plotly
+  - matplotlib
+  - jupyterlab
+  - folium
+  - pip
+  - altair
