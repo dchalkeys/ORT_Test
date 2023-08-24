@@ -28,7 +28,7 @@ event = Point((48.7767, 121.8144))
 clicked_point = Point(event.x, event.y)
 
 point_dist = gdf.distance(clicked_point)
-closest_points = gdf[point_dist==point_dist.min()]
+closest_points = gdf[point_dist == point_dist.min()]
 
 closest_points
 
@@ -42,9 +42,10 @@ width = 300
 height = 200
 
 
-vega_data = altair.Chart(closest_points, width=width, height=height).mark_line().encode(
-    x = 'time:T',
-    y = 'sd:N'
+vega_data = (
+    altair.Chart(closest_points, width=width, height=height)
+    .mark_line()
+    .encode(x="time:T", y="sd:N")
 )
 vega_data
 
@@ -69,4 +70,3 @@ marker = folium.Marker(
 marker.add_to(m)
 
 m
-
