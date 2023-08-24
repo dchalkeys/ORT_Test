@@ -12,3 +12,7 @@ dependencies:
   - folium
   - pip
   - altair
+  - shapely
+  - ipyleaflet
+  - ipywidgets
+  - bqplot
