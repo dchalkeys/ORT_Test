@@ -3,24 +3,22 @@
 
 # # Imports
 
-# In[1]:
 
 
-import base64
-
-import bqplot.pyplot as plt
-import geopandas as gpd
 import ipyleaflet
-import ipywidgets
+import geopandas as gpd
 import matplotlib.pyplot as plt
 import mplleaflet
 import pandas as pd
-import xarray as xr
+import base64
 from shapely import Point
+import ipywidgets
+import bqplot.pyplot as plt
+import xarray as xr
+
 
 # # Open File in GeoPandas
 
-# In[2]:
 
 
 # Open w/ xarray
@@ -32,7 +30,6 @@ ds
 #
 # # Extract Snow Water Equivalent
 
-# In[3]:
 
 
 sdwe = ds["sd"]
@@ -41,7 +38,6 @@ sdwe
 
 # # Convert to Pandas Dataframe
 
-# In[5]:
 
 
 df = sdwe.to_dataframe().reset_index()
@@ -49,8 +45,6 @@ df
 
 
 # # Convert to Geopandas Dataframe
-
-# In[6]:
 
 
 gdf = gpd.GeoDataFrame(
@@ -62,8 +56,6 @@ gdf
 
 # # Filter out null values
 
-# In[7]:
-
 
 gdf = gdf[~gdf["sd"].isna()]
 gdf
@@ -71,7 +63,6 @@ gdf
 
 # # Filter out 10's (too many to not be suspicous)
 
-# In[8]:
 
 
 gdf = gdf[gdf["sd"] != 10]
@@ -80,7 +71,6 @@ gdf
 
 # # Print Summary Statistics
 
-# In[ ]:
 
 
 gdf_reset_index = gdf.reset_index()
@@ -93,7 +83,6 @@ print(gdf_reset_index.columns)
 
 # # Define Functions
 
-# In[9]:
 
 
 m = ipyleaflet.Map(center=(0, 0), zoom=2)
@@ -137,7 +126,6 @@ def handle_clicks(**kwargs):
 
 # # Call Map
 
-# In[11]:
 
 
 m.on_interaction(handle_clicks)
