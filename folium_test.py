@@ -8,14 +8,14 @@
 # In[17]:
 
 
+import base64
+
+import folium
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import mplleaflet
 import pandas as pd
-import base64
 from folium import IFrame
-import folium
-
 
 # ### Declare Test Coordinates to Point and Retrieve Time Series
 

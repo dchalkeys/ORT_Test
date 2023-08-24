@@ -8,18 +8,18 @@
 # In[1]:
 
 
-import ipyleaflet
+import base64
+
+import altair
+import folium
 import geopandas as gpd
+import ipyleaflet
+import ipywidgets
 import matplotlib.pyplot as plt
 import mplleaflet
 import pandas as pd
-import base64
-import folium
-from shapely import Point
-import altair
-import ipywidgets
 from ipywidgets import HTML
-
+from shapely import Point
 
 # In[2]:
 

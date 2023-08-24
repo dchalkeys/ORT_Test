@@ -6,17 +6,17 @@
 # In[1]:
 
 
-import ipyleaflet
+import base64
+
+import bqplot.pyplot as plt
 import geopandas as gpd
+import ipyleaflet
+import ipywidgets
 import matplotlib.pyplot as plt
 import mplleaflet
 import pandas as pd
-import base64
-from shapely import Point
-import ipywidgets
-import bqplot.pyplot as plt
 import xarray as xr
-
+from shapely import Point
 
 # # Open File in GeoPandas
 
